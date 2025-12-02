@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: academyone-n8n
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_EDITOR_BASE_URL
+        value: https://academyone-n8n.onrender.com
+      - key: WEBHOOK_URL
+        value: https://academyone-n8n.onrender.com
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true
